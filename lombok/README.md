@@ -2,6 +2,7 @@
 
 ## 参考资料
 
++ [Introduction to Project Lombok - Baeldung](https://www.baeldung.com/intro-to-project-lombok)
 + [Lombok：让 JAVA 代码更优雅](http://blog.didispace.com/java-lombok-1/)
 + [Lombok 指南](https://zhuanlan.zhihu.com/p/30318534)
 + [Lombok 看这篇就够了](https://zhuanlan.zhihu.com/p/32779910)
