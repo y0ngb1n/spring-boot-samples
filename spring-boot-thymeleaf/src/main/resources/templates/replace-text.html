@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Replace Text</title>
+</head>
+<body>
+<p th:text="'Welcome to our application, ' + ${user.name} + '!'">
+<p th:text="|Welcome to our application, ${user.name}!|">
+<p th:text="${onevar} + ', ' + |${twovar}, ${threevar}|">
+</body>
+</html>

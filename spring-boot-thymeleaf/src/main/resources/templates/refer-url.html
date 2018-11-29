@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Refer URL</title>
+</head>
+<body>
+<ul>
+  <li>
+    <a th:href="@{https://github.com/{username}(username=${username})}">绝对路径 1</a>，
+    <a th:href="@{https://www.baidu.com}">绝对路径 2</a>
+  </li>
+  <li>
+    <a th:href="@{/}">相对路径</a>
+  </li>
+  <li>
+    <a th:href="@{/css/app.css}">Content 路径，默认访问 static 下的 CSS 文件</a>
+  </li>
+</ul>
+</body>
+</html>

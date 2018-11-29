@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>th:text And th:utext</title>
+</head>
+<body>
+<h2 th:text="' th:text &nbsp » ' + ${content}">以纯文本的方式输出</h2>
+<h2 th:utext="'th:utext      » ' + ${content}">以 HTML 标签的方式输出，浏览器能正常渲染</h2>
+</body>
+</html>

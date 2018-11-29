@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>loop</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>NAME</th>
+    <th>AGE</th>
+    <th>ADMIN</th>
+  </tr>
+  <tr th:each="user : ${users}">
+    <td th:text="${user.name}">Onions</td>
+    <td th:text="${user.age}">22</td>
+    <td th:text="${user.role} == 'admin' ? #{true} : #{false}">yes</td>
+  </tr>
+</table>
+</body>
+</html>

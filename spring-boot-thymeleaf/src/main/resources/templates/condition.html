@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>condition</title>
+</head>
+<body>
+<a th:href="@{/login}" th:unless="${user == null}">登录</a>
+<p th:if="${user != null}">欢迎，<span th:text="|${user.name}（role: ${user.role}）|">tony</span></p>
+
+<div th:switch="${user.role}">
+  <p th:case="'admin'">User is an administrator</p>
+  <p th:case="#{roles.manager}">User is a manager</p>
+  <p th:case="*">User is some other thing</p>
+</div>
+</body>
+</html>

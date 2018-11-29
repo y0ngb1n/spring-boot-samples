@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>operator</title>
+</head>
+<body>
+<h2 th:text="|name: ${user.name}, age: ${user.age}, env: ${env}|"></h2>
+
+<p th:with="isEven=(${user.age} % 2 == 0)">年龄为偶数</p>
+<p th:with="isEven=(${user.age == 18})">哟，才 18 呐！</p>
+
+<p th:if="${user.age}  &gt; 18">当前年龄大于 18</p>
+
+<div th:class="${env} == 'dev' ? 'dev' : 'prod'"></div>
+
+<p th:text="'当前环境：' + ((${env} == 'dev') ? 'Development' : 'Production')"></p>
+</body>
+</html>
