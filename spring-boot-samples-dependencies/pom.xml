@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.github.y0ngb1n.samples</groupId>
+  <artifactId>spring-boot-samples-dependencies</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <url>https://github.com/y0ngb1n/spring-boot-samples</url>
+
+  <name>spring-boot-samples-dependencies</name>
+  <description>Spring Boot Samples Dependencies</description>
+
+  <properties>
+    <google-guava.version>27.1-jre</google-guava.version>
+  </properties>
+
+  <developers>
+    <developer>
+      <id>y0ngb1n</id>
+      <email>y0ngb1n@163.com</email>
+      <name>杨斌</name>
+      <timezone>Asia/Shanghai</timezone>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/y0ngb1n/spring-boot-samples.git</connection>
+    <developerConnection>
+      scm:git:git@github.com:y0ngb1n/spring-boot-samples.git
+    </developerConnection>
+    <url>https://github.com/y0ngb1n/spring-boot-samples</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${google-guava.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+</project>

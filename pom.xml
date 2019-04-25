@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.0.RELEASE</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>io.github.y0ngb1n.samples</groupId>
+  <artifactId>spring-boot-samples-parent</artifactId>
+  <name>Spring Boot for Learning</name>
+  <packaging>pom</packaging>
+  <description>
+    <![CDATA[
+        This project is a Spring Boot for learning.
+      ]]>
+  </description>
+  <url>https://github.com/y0ngb1n/spring-boot-samples</url>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <properties>
+    <java.version>1.8</java.version>
+  </properties>
+
+  <developers>
+    <developer>
+      <id>y0ngb1n</id>
+      <email>y0ngb1n@163.com</email>
+      <name>杨斌</name>
+      <timezone>Asia/Shanghai</timezone>
+      <roles>
+        <role>Project Lead</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/y0ngb1n/spring-boot-samples.git</connection>
+    <developerConnection>
+      scm:git:git@github.com:y0ngb1n/spring-boot-samples.git
+    </developerConnection>
+    <url>https://github.com/y0ngb1n/spring-boot-samples</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.github.y0ngb1n.samples</groupId>
+        <artifactId>spring-boot-samples-dependencies</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>spring-boot-samples-dependencies</module>
+  </modules>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
