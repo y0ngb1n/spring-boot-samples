@@ -61,6 +61,7 @@
   </dependencyManagement>
 
   <modules>
+    <module>spring-boot-samples-custom-starter</module>
     <module>spring-boot-samples-dependencies</module>
   </modules>
 
