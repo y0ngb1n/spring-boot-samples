@@ -1,4 +1,4 @@
-<h1 align="center">Spring Boot Examples</h1>
+<h1 align="center">𝑺𝒑𝒓𝒊𝒏𝒈 𝑩𝒐𝒐𝒕 𝑬𝒙𝒂𝒎𝒑𝒍𝒆𝒔</h1>
 
 <div align="center">
 
@@ -23,18 +23,18 @@ Spring Boot 使用的各种示例，以最简单、最实用为标准
 
 ---
 
-## How to Build
+## 𝑯𝒐𝒘 𝒕𝒐 𝑩𝒖𝒊𝒍𝒅
 
 ```bash
 mvn clean install
 ```
 
-## Coding Style
+## 𝑪𝒐𝒅𝒊𝒏𝒈 𝑺𝒕𝒚𝒍𝒆
 
 + [Google Java Style](https://github.com/google/styleguide)
 + [Alibaba Java Coding Guidelines](https://github.com/alibaba/p3c)
 
-## References
+## 𝑹𝒆𝒇𝒆𝒓𝒆𝒏𝒄𝒆𝒔
 
 <details>
 <summary>参考资源</summary>
@@ -42,6 +42,7 @@ mvn clean install
 ### 学习资源
 
 - [![GitHub repo](https://flat.badgen.net/github/stars/spring-projects/spring-boot?icon=github&label=spring-boot)](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples 'spring-boot-samples'), by Spring
+- [![GitHub repo](https://flat.badgen.net/github/stars/jack80342/Spring-Boot-Reference-Guide?icon=github&label=Spring-Boot-Reference-Guide)](https://github.com/jack80342/Spring-Boot-Reference-Guide)
 - [![GitHub repo](https://flat.badgen.net/github/stars/ityouknow/spring-boot-examples?icon=github&label=spring-boot-examples)](https://github.com/ityouknow/spring-boot-examples), by 纯洁的微笑
 - [![GitHub repo](https://flat.badgen.net/github/stars/JeffLi1993/springboot-learning-example?icon=github&label=springboot-learning-example)](https://github.com/JeffLi1993/springboot-learning-example), by 泥瓦匠
 - [![GitHub repo](https://flat.badgen.net/github/stars/dyc87112/SpringBoot-Learning?icon=github&label=SpringBoot-Learning)](https://github.com/dyc87112/SpringBoot-Learning), by 翟永超
@@ -55,5 +56,9 @@ mvn clean install
 
 - [![GitHub repo](https://flat.badgen.net/github/stars/marcosbarbero/spring-cloud-zuul-ratelimit?icon=github&label=spring-cloud-zuul-ratelimit)](https://github.com/marcosbarbero/spring-cloud-zuul-ratelimit)
 - [![GitHub repo](https://flat.badgen.net/github/stars/biezhi/keeper?icon=github&label=keeper)](https://github.com/biezhi/keeper)
+
+### 资源索引
+
++ [![GitHub repo](https://flat.badgen.net/github/stars/ityouknow/awesome-spring-boot?icon=github&label=awesome-spring-boot)](https://github.com/ityouknow/awesome-spring-boot), by 纯洁的微笑
 
 </details>
