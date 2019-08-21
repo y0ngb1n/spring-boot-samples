@@ -51,6 +51,7 @@ mvn clean install
 - [![GitHub repo](https://flat.badgen.net/github/stars/battcn/spring-boot2-learning?icon=github&label=spring-boot2-learning)](https://github.com/battcn/spring-boot2-learning), by 唐亚峰
 - [![GitHub repo](https://flat.badgen.net/github/stars/eacdy/spring-boot-study?icon=github&label=spring-boot-study)](https://github.com/eacdy/spring-boot-study), by 周立
 - [![GitHub repo](https://flat.badgen.net/github/stars/wuyouzhuguli/SpringAll?icon=github&label=SpringAll)](https://github.com/wuyouzhuguli/SpringAll)
+- [![GitHub repo](https://flat.badgen.net/github/stars/xkcoding/spring-boot-demo?icon=github&label=spring-boot-demo)](https://github.com/xkcoding/spring-boot-demo '各种 Spring Boot Demo 并带有详细说明')
 
 ### 开源实践
 
