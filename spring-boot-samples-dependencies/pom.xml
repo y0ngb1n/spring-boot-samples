@@ -14,7 +14,8 @@
   <description>Spring Boot Samples Dependencies</description>
 
   <properties>
-    <google-guava.version>27.1-jre</google-guava.version>
+    <apache-commons-validator.version>1.6</apache-commons-validator.version>
+    <google-guava.version>28.0-jre</google-guava.version>
   </properties>
 
   <developers>
@@ -37,6 +38,14 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- Apache Commons Validator provides the building blocks for both client side validation and server side data validation. -->
+      <dependency>
+        <groupId>commons-validator</groupId>
+        <artifactId>commons-validator</artifactId>
+        <version>${apache-commons-validator.version}</version>
+      </dependency>
+
+      <!-- Guava: Google Core Libraries for Java -->
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>

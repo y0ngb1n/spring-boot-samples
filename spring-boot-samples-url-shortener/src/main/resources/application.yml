@@ -1,0 +1,10 @@
+spring:
+  # Redis Config
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: your_password
+
+logging:
+  level:
+    io.github.y0ngb1n.*: debug
