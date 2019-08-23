@@ -10,13 +10,17 @@ addons:
 jdk:
   - openjdk8
 
+install:
+  - pip install --user codecov
+
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - codecov
 
 cache:
   directories:
+    - '$HOME/.cache/pip'
     - '$HOME/.m2/repository'
     - '$HOME/.sonar/cache'
