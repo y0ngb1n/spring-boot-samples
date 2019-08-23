@@ -14,7 +14,7 @@
 <div align="center">
 
 [![Build Status](https://badgen.net/travis/y0ngb1n/spring-boot-samples?icon=travis)](https://travis-ci.org/y0ngb1n/spring-boot-samples)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=y0ngb1n_spring-boot-samples&metric=alert_status)](https://sonarcloud.io/dashboard?id=y0ngb1n_spring-boot-samples)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=io.github.y0ngb1n.samples%3Aspring-boot-samples-parent&metric=alert_status)](https://sonarcloud.io/dashboard?id=io.github.y0ngb1n.samples%3Aspring-boot-samples-parent)
 
 </div>
 <div align="center">
