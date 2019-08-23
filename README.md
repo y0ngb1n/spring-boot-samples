@@ -10,6 +10,15 @@
 ![GitHub Forks](https://flat.badgen.net/github/forks/y0ngb1n/spring-boot-samples)
 [![Follow Me](https://img.shields.io/github/followers/y0ngb1n.svg?style=social&label=Follow%20Me)](https://github.com/y0ngb1n)
 
+</div>
+<div align="center">
+
+[![Build Status](https://badgen.net/travis/y0ngb1n/spring-boot-samples?icon=travis)](https://travis-ci.org/y0ngb1n/spring-boot-samples)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=y0ngb1n_spring-boot-samples&metric=alert_status)](https://sonarcloud.io/dashboard?id=y0ngb1n_spring-boot-samples)
+
+</div>
+<div align="center">
+
 Spring Boot 使用的各种示例，以最简单、最实用为标准
 
 <details>
