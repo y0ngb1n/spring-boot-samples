@@ -1,0 +1,4 @@
+# 集成测试：https://www.baeldung.com/spring-boot-testing
+logging:
+  level:
+    io.github.y0ngb1n.*: debug
