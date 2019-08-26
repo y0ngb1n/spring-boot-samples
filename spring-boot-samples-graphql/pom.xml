@@ -14,18 +14,6 @@
   <artifactId>spring-boot-samples-graphql</artifactId>
   <description>Getting Started with GraphQL and Spring Boot.</description>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>io.github.y0ngb1n.samples</groupId>
-        <artifactId>custom-starter-dependencies</artifactId>
-        <version>${project.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
