@@ -24,6 +24,7 @@
   <version>1.0.0-SNAPSHOT</version>
 
   <properties>
+    <jacoco.version>0.8.4</jacoco.version>
     <java.version>1.8</java.version>
   </properties>
 
@@ -90,6 +91,26 @@
           <source>${java.version}</source>
           <target>${java.version}</target>
         </configuration>
+      </plugin>
+      <!-- ref: https://github.com/joaomlneto/travis-ci-tutorial-java -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>test</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
