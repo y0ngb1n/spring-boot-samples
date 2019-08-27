@@ -25,7 +25,7 @@ import org.springframework.test.web.servlet.MockMvc;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.MOCK, classes = GraphQLApplication.class)
 @AutoConfigureMockMvc
-@TestPropertySource(locations = "classpath:application-integration-test.yml")
+@TestPropertySource(locations = "classpath:application-integration-test.properties")
 public class GraphQLApplicationIntegrationTest {
 
   @Autowired
