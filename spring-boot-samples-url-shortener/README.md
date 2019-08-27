@@ -4,6 +4,7 @@
 
 + Spring Boot 2.1.0+
 + Redis
++ Lombok
 + Guava 28.0
 + Common Validator 1.6
 
@@ -89,7 +90,7 @@ public class UrlShortenerController {
 
 ## 使用方式
 
-**Step 0: 启动 Redis**
+**Step 0: 安装并启动 Redis**
 
 ```bash
 # on Windows
@@ -101,7 +102,7 @@ brew install redis
 redis-server
 ```
 
-**Step 1: 启动服务**
+**Step 1: 启动 `url-shortener` 服务**
 
 ```console
 $ mvn install
@@ -118,8 +119,8 @@ $ mvn spring-boot:run
 
 ```console
 $ curl -X POST http://127.0.0.1:8080/v1 \
-    -H 'Content-Type: text/plain' \
-    -d https://y0ngb1n.github.io
+  -H 'Content-Type: text/plain' \
+  -d https://y0ngb1n.github.io
 515bbe2b
 ```
 
