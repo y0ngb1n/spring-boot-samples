@@ -1,6 +1,7 @@
 package io.github.y0ngb1n.samples.urlshortener.controller;
 
 import com.google.common.hash.Hashing;
+import io.github.y0ngb1n.samples.urlshortener.exception.InvalidUrlException;
 import java.nio.charset.StandardCharsets;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.validator.routines.UrlValidator;
@@ -44,6 +45,6 @@ public class UrlShortenerController {
       redisTemplate.opsForValue().set(id, url);
       return id;
     }
-    throw new RuntimeException("URL Invalid: " + url);
+    throw new InvalidUrlException("URL Invalid: " + url);
   }
 }

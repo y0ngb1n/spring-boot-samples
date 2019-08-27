@@ -1,6 +1,10 @@
 language: java
 sudo: false
 
+# ref: https://docs.travis-ci.com/user/database-setup/
+services:
+  - redis-server
+
 addons:
   # ref: https://docs.travis-ci.com/user/sonarcloud/
   sonarcloud:
