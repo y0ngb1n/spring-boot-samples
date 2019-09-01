@@ -136,6 +136,8 @@ $ mvn spring-boot:run
 2019-08-24 19:35:11.702  INFO 14464 --- [           main] i.g.y.s.graphql.GraphQLApplication       : Started GraphQLApplication in 16.808 seconds (JVM running for 25.601)
 ```
 
+**查询部分字段**
+
 ```console
 $ curl -X POST \
   http://127.0.0.1:8080/v1/books \
@@ -170,6 +172,32 @@ $ curl -X POST \
   http://127.0.0.1:8080/v1/books \
   -H 'Content-Type: text/plain' \
   -d '{
+    book(id: "9787121362132") {
+      title
+  }
+}' | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   210    0   159  100    51   1691    542 --:--:-- --:--:-- --:--:--  2234
+{
+  "errors": [],
+  "data": {
+    "book": {
+      "title": "高可用可伸缩微服务架构：基于 Dubbo、Spring Cloud 和 Service Mesh"
+    }
+  },
+  "extensions": null,
+  "dataPresent": true
+}
+```
+
+**查询全部字段**
+
+```console
+$ curl -X POST \
+  http://127.0.0.1:8080/v1/books \
+  -H 'Content-Type: text/plain' \
+  -d '{
     allBooks {
       isbn
       title
@@ -194,41 +222,8 @@ $ curl -X POST \
         "publisher": "机械工业出版社",
         "publishedDate": "2007-06-01"
       },
-      {
-        "isbn": "9787111421900",
-        "title": "深入理解 Java 虚拟机：JVM 高级特性与最佳实践（第2版）",
-        "authors": [
-          "周志明"
-        ],
-        "publisher": "机械工业出版社",
-        "publishedDate": "2013-05-01"
-      },
       ...
     ]
-  },
-  "extensions": null,
-  "dataPresent": true
-}
-```
-
-```console
-$ curl -X POST \
-  http://127.0.0.1:8080/v1/books \
-  -H 'Content-Type: text/plain' \
-  -d '{
-    book(id: "9787121362132") {
-      title
-  }
-}' | jq
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   210    0   159  100    51   1691    542 --:--:-- --:--:-- --:--:--  2234
-{
-  "errors": [],
-  "data": {
-    "book": {
-      "title": "高可用可伸缩微服务架构：基于 Dubbo、Spring Cloud 和 Service Mesh"
-    }
   },
   "extensions": null,
   "dataPresent": true
@@ -273,6 +268,8 @@ $ curl -X POST \
   "dataPresent": true
 }
 ```
+
+**查询多个数据**
 
 ```console
 $ curl -X POST \
@@ -355,3 +352,4 @@ $ curl -X POST \
 + [全面解析 GraphQL，携程微服务背景下的前后端数据交互方案](https://www.infoq.cn/article/xZ0ws6_A5jmrJ6ZTPOz8)
 + [前端er了解 GraphQL，看这篇就够了](https://juejin.im/post/5ca1b7be51882543ea4b7f27)
 + [GraphQL 之路](https://www.robinwieruch.de/the-road-to-graphql-book/)
++ [谈谈 GraphQL 的历史、组件和生态系统](https://www.infoq.cn/article/HfkjC5CdT1XXTsd44b3A)
