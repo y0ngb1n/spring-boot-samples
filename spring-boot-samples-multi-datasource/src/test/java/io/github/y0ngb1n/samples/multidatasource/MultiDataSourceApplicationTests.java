@@ -25,10 +25,14 @@ public class MultiDataSourceApplicationTests {
   @Test
   public void testFooDataSource() throws SQLException {
     log.info("foo datasource runtime: {}", fooDataSource.getConnection());
+    assert null != fooDataSource.getConnection();
+    assert fooDataSource.getConnection().toString().contains("jdbc:h2:mem:foo");
   }
 
   @Test
   public void testBarDataSource() throws SQLException {
     log.info("bar datasource runtime: {}", barDataSource.getConnection());
+    assert null != barDataSource.getConnection();
+    assert barDataSource.getConnection().toString().contains("jdbc:h2:mem:bar");
   }
 }
