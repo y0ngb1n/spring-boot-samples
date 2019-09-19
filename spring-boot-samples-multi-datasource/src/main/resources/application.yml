@@ -1,0 +1,23 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+logging:
+  level:
+    io.github.y0ngb1n.*: debug
+
+# Foo DataSource
+foo:
+  datasource:
+    url: jdbc:h2:mem:foo
+    username: sa
+    password:
+
+# Bar DataSource
+bar:
+  datasource:
+    url: jdbc:h2:mem:bar
+    username: sa
+    password:

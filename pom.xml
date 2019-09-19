@@ -65,6 +65,7 @@
     <module>spring-boot-samples-custom-starter</module>
     <module>spring-boot-samples-dependencies</module>
     <module>spring-boot-samples-graphql</module>
+    <module>spring-boot-samples-multi-datasource</module>
     <module>spring-boot-samples-url-shortener</module>
   </modules>
 
