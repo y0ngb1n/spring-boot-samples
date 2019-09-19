@@ -212,3 +212,5 @@ $ curl -s http://localhost:8080/actuator/beans | jq
 ---
 
 ## 参考链接
+
++ http://gk.link/a/1029F

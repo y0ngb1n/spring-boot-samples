@@ -33,16 +33,27 @@ Spring Boot 使用的各种示例，以最简单、最实用为标准
 
 ---
 
+## 目录
+
++ [如何定制自己的起步依赖](./spring-boot-samples-custom-starter)
++ [利用 Spring Boot & Redis 实现短链接服务](./spring-boot-samples-url-shortener)
++ [GraphQL 与 Spring Boot 的初体验](./spring-boot-samples-graphql)
++ [Spring Boot 配置多数据源](./spring-boot-samples-multi-datasource)
++ 持续更新中，敬请期待 ...
+
+---
+
 ## 𝑯𝒐𝒘 𝒕𝒐 𝑩𝒖𝒊𝒍𝒅
 
-```bash
-mvn clean install
+```console
+$ mvn clean install
 ```
 
 ## 𝑪𝒐𝒅𝒊𝒏𝒈 𝑺𝒕𝒚𝒍𝒆
 
 + [Google Java Style](https://github.com/google/styleguide)
 + [Alibaba Java Coding Guidelines](https://github.com/alibaba/p3c)
++ [SonarQube & SonarLint](https://github.com/SonarSource)
 
 ## 𝑹𝒆𝒇𝒆𝒓𝒆𝒏𝒄𝒆𝒔
 
