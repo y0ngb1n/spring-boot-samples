@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  prometheus:
+    image: 'prom/prometheus:v2.14.0'
+    ports:
+      - '9090:9090'
+    command: '--config.file=/etc/prometheus/config.yml'
+    volumes:
+      - './prometheus.yml:/etc/prometheus/config.yml'
+
+  grafana:
+    image: 'grafana/grafana:6.5.0'
+    ports:
+      - '3000:3000'
