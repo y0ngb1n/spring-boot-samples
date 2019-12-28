@@ -1,18 +1,17 @@
-package com.y0ngb1n.swagger2;
+package io.github.y0ngb1n.swagger;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Demo for Swagger2.
+ * 在 Spring Boot 项目中使用 Swagger 文档.
  *
  * @author y0ngb1n
- * @version 1.0.0
  */
 @SpringBootApplication
-public class Swagger2Application {
+public class SwaggerApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(Swagger2Application.class, args);
+    SpringApplication.run(SwaggerApplication.class, args);
   }
 }

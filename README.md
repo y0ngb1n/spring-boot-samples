@@ -40,6 +40,7 @@ Spring Boot 使用的各种示例，以最简单、最实用为标准
 + [GraphQL 与 Spring Boot 的初体验](./spring-boot-samples-graphql)
 + [Spring Boot 配置多数据源](./spring-boot-samples-multi-datasource)
 + [使用 Prometheus & Grafana 监控你的 Spring Boot 应用](./spring-boot-samples-monitoring-prometheus-grafana)
++ [在 Spring Boot 项目中使用 Swagger 文档](./spring-boot-samples-swagger)
 + 持续更新中，敬请期待 ...
 
 ---
