@@ -8,7 +8,7 @@
     <groupId>io.github.y0ngb1n.samples</groupId>
     <artifactId>spring-boot-samples-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <relativePath/>
+    <relativePath>..</relativePath>
   </parent>
 
   <artifactId>spring-boot-samples-monitoring-prometheus-grafana</artifactId>

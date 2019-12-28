@@ -39,6 +39,7 @@ Spring Boot 使用的各种示例，以最简单、最实用为标准
 + [利用 Spring Boot & Redis 实现短链接服务](./spring-boot-samples-url-shortener)
 + [GraphQL 与 Spring Boot 的初体验](./spring-boot-samples-graphql)
 + [Spring Boot 配置多数据源](./spring-boot-samples-multi-datasource)
++ [使用 Prometheus & Grafana 监控你的 Spring Boot 应用](./spring-boot-samples-monitoring-prometheus-grafana)
 + 持续更新中，敬请期待 ...
 
 ---
