@@ -75,6 +75,7 @@ $ mvn clean install
 - [![GitHub repo](https://flat.badgen.net/github/stars/eacdy/spring-boot-study?icon=github&label=spring-boot-study)](https://github.com/eacdy/spring-boot-study), by 周立
 - [![GitHub repo](https://flat.badgen.net/github/stars/wuyouzhuguli/SpringAll?icon=github&label=SpringAll)](https://github.com/wuyouzhuguli/SpringAll)
 - [![GitHub repo](https://flat.badgen.net/github/stars/xkcoding/spring-boot-demo?icon=github&label=spring-boot-demo)](https://github.com/xkcoding/spring-boot-demo '各种 Spring Boot Demo 并带有详细说明')
+- [![GitHub repo](https://flat.badgen.net/github/stars/YunaiV/SpringBoot-Labs?icon=github&label=SpringBoot-Labs)](https://github.com/YunaiV/SpringBoot-Labs) - 基于 Spring Boot 2.X 版本的深度入门教程
 
 ### 开源实践
 
