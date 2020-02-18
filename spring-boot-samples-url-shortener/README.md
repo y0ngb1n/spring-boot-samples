@@ -6,7 +6,8 @@
 + Redis
 + Lombok
 + Guava 28.0
-+ Common Validator 1.6
++ Commons Validator 1.6
++ Commons Pool 2.6.0
 
 ## 添加依赖项
 
@@ -21,6 +22,11 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-pool2</artifactId>
     </dependency>
 
     <dependency>
@@ -139,6 +145,12 @@ https://y0ngb1n.github.io
 2019-08-21 21:42:40.748 DEBUG 10244 --- [nio-8080-exec-3] i.g.y.s.u.c.UrlShortenerController       : URL Retrieved: https://y0ngb1n.github.io
 ```
 
+## 🚀 更新日志
+
+### 2020-02-18
+
+- 添加 [`commons-pool2`](https://github.com/apache/commons-pool) 依赖：默认情况下，如果 `commons-pool2` 在 `classpath` 上，将自动创建一个连接池工厂。
+
 ## 参考资料
 
 + https://youtu.be/Zr0E2VP24w8
@@ -150,3 +162,4 @@ https://y0ngb1n.github.io
   - 应用场景：`黑名单`、`URL 去重`、`单词拼写检查`、`Key-Value 缓存系统的 Key 校验`、`ID 校验，比如订单系统查询某个订单 ID 是否存在，如果不存在就直接返回`
 + [谈谈全局唯一 ID 生成方法](https://yuerblog.cc/2017/06/06/unique-id-generator/)
 + [Leaf — 美团点评分布式 ID 生成系统](https://tech.meituan.com/2017/04/21/mt-leaf.html)
++ [「小码短链接」好用、好看、有统计报表的短链接工具](https://sspai.com/post/57627)
