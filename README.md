@@ -4,7 +4,7 @@
 
 ![JDK](https://flat.badgen.net/badge/jdk/1.8/orange)
 ![Maven](https://flat.badgen.net/badge/maven/3.6.0/yellow)
-![Spring Boot](https://flat.badgen.net/badge/spring%20boot/2.x/green)
+![Spring Boot](https://flat.badgen.net/badge/spring%20boot/2.3.3.RELEASE/green)
 ![Code Style](https://flat.badgen.net/badge/code%20style/standard/f2a)
 ![GitHub Stars](https://flat.badgen.net/github/stars/y0ngb1n/spring-boot-samples)
 ![GitHub Forks](https://flat.badgen.net/github/forks/y0ngb1n/spring-boot-samples)
@@ -23,9 +23,9 @@
 Spring Boot 使用的各种示例，以最简单、最实用为标准
 
 <details>
-<summary><code>Spring Boot 2.0</code></summary>
+<summary><code>Spring Boot 2</code></summary>
 
-![diagram-boot-reactor](https://spring.io/img/homepage/diagram-boot-reactor.svg)
+![diagram-boot-reactor](https://spring.io/images/diagram-reactive-1290533f3f01ec9c57baf2cc9ea9fa2f.svg)
 
 </details>
 
