@@ -1,0 +1,3 @@
+logging:
+  level:
+    io.github.y0ngb1n.*: info
