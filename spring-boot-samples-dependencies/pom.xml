@@ -16,7 +16,7 @@
   <properties>
     <apache-commons-validator.version>1.6</apache-commons-validator.version>
     <facebook-graphql.version>5.10.0</facebook-graphql.version>
-    <google-guava.version>28.0-jre</google-guava.version>
+    <google-guava.version>29.0-jre</google-guava.version>
   </properties>
 
   <developers>
