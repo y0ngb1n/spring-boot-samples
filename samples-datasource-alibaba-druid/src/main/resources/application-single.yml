@@ -1,0 +1,48 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:single
+    username: sa
+    password:
+    driver-class-name: com.alibaba.druid.proxy.DruidDriver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      ##
+      # 配置初始化大小、最小、最大连接池数量
+      ##
+      initial-size: 5
+      min-idle: 10
+      max-active: 20
+      ##
+      # 参数表示是否对空闲连接保活，布尔类型
+      ##
+      keep-alive: true
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 600000
+      max-evictable-idle-time-millis: 900000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 2000
+      ##
+      # 配置获取连接等待超时的时间
+      ##
+      max-wait: 800
+      connect-properties: socketTimeout=3000;connectTimeout=1200
+      ##
+      # 用于检测连接是否有效的 SQL 语句
+      ##
+      validation-query: select 1
+      ##
+      # 申请连接的时候检测，如果空闲时间大于 timeBetweenEvictionRunsMillis，执行 validationQuery 检测连接是否有效
+      ##
+      test-while-idle: true
+      ##
+      # 申请连接时执行 validationQuery 检测连接是否有效，做了这个配置会降低性能
+      ##
+      test-on-borrow: false
+      ##
+      # 归还连接时执行 validationQuery 检测连接是否有效，做了这个配置会降低性能
+      ##
+      test-on-return: false
+      ##
+      # 通过限制达到一定使用次数后断开重连，使得多个服务器间负载更均衡
+      ##
+      phy-max-use-count: 1000

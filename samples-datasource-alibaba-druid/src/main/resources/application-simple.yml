@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:simple
+    username: sa
+    password:
+    type: com.alibaba.druid.pool.DruidDataSource

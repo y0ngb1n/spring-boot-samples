@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: samples-datasource-alibaba-druid
+  profiles:
+    ##
+    #    simple: 默认示例
+    #    single: 单数据源示例
+    #     multi: 多数据源示例
+    #    filter: 配置 Filter 示例
+    # recommend: 推荐配置
+    ##
+    active: recommend
+    include: filter

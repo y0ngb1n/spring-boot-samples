@@ -69,6 +69,7 @@
     <module>spring-boot-samples-multi-datasource</module>
     <module>spring-boot-samples-swagger</module>
     <module>spring-boot-samples-url-shortener</module>
+    <module>samples-datasource-alibaba-druid</module>
   </modules>
 
   <dependencies>

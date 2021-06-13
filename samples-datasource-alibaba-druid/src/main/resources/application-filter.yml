@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    druid:
+      ##
+      # 内置 Filter 的别名：https://github.com/alibaba/druid/wiki/%E5%86%85%E7%BD%AEFilter%E7%9A%84%E5%88%AB%E5%90%8D
+      ##
+      filters: config,stat,slf4j
+      filter:
+        config:
+          enabled: true
+        ##
+        # 配置 StatFilter，参考文档：https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatFilter
+        ##
+        stat:
+          enabled: true
+          # 开启慢查询记录
+          log-slow-sql: true
+          # 慢 SQL 的标准，单位：毫秒
+          slow-sql-millis: 5000
+        slf4j:
+          enabled: true
+        wall:
+          enabled: true
+      ##
+      # 配置 StatViewServlet，参考文档：https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatViewServlet%E9%85%8D%E7%BD%AE
+      # 访问 http://127.0.0.1:8080/druid 地址，可以看到监控页面
+      ##
+      stat-view-servlet:
+        enabled: true
+        login-username: yangbin
+        login-password: yangbin

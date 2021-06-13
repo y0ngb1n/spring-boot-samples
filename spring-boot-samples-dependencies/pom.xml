@@ -14,9 +14,10 @@
   <description>Spring Boot Samples Dependencies</description>
 
   <properties>
+    <alibaba-druid.version>1.2.6</alibaba-druid.version>
     <apache-commons-validator.version>1.6</apache-commons-validator.version>
     <facebook-graphql.version>5.10.0</facebook-graphql.version>
-    <google-guava.version>29.0-jre</google-guava.version>
+    <google-guava.version>30.1.1-jre</google-guava.version>
   </properties>
 
   <developers>
@@ -39,6 +40,13 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- Alibaba Druid: 为监控而生的数据库连接池 -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid-spring-boot-starter</artifactId>
+        <version>${alibaba-druid.version}</version>
+      </dependency>
+
       <!-- Apache Commons Validator provides the building blocks for both client side validation and server side data validation. -->
       <dependency>
         <groupId>commons-validator</groupId>
