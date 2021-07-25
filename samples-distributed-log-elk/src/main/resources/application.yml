@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: samples-distributed-log-elk
+  profiles:
+    ##
+    #     elk: 使用 Java Config 配置
+    # elk-xml: 使用 logback-spring.xml 配置
+    ##
+    active: elk

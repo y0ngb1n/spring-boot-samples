@@ -1,0 +1,2 @@
+logging:
+  config: logstash-logback-spring.xml

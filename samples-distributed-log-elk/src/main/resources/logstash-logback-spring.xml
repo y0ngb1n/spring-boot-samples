@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <include resource="org/springframework/boot/logging/logback/base.xml" />
+
+  <!-- 默认会被序列化到日志文档中 -->
+  <springProperty scope="context" name="APP_NAME" source="spring.application.name"/>
+
+  <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+    <destination>192.168.50.88:8880</destination>
+    <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" >
+      <!-- customFields 的作用是在 Logstash 配置中指定索引名字时的可选参数，日志文档中会添加这个字段 -->
+      <customFields>{"app_name":"${APP_NAME}"}</customFields>
+    </encoder>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="LOGSTASH" />
+    <appender-ref ref="CONSOLE" />
+  </root>
+
+</configuration>

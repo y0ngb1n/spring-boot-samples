@@ -1,0 +1,38 @@
+version: '3.3'
+services:
+  elasticsearch:
+    image: 'bitnami/elasticsearch:7.13.4'
+    container_name: elasticsearch
+    ports:
+      - '9200:9200'
+      - '9300:9300'
+    volumes:
+      - 'elasticsearch_data:/bitnami/elasticsearch/data'
+  logstash:
+    image: 'bitnami/logstash:7.13.4'
+    container_name: logstash
+    ports:
+      - '8080:8080'
+    volumes:
+      - 'logstash_data:/bitnami'
+      - './logstash-config.conf:/bitnami/logstash/config/custom.conf'
+    environment:
+      LOGSTASH_CONF_FILENAME: 'custom.conf'
+    depends_on:
+      - elasticsearch
+  kibana:
+    image: 'bitnami/kibana:7.13.4'
+    container_name: kibana
+    ports:
+      - '5601:5601'
+    volumes:
+      - 'kibana_data:/bitnami/kibana'
+    depends_on:
+      - elasticsearch
+volumes:
+  elasticsearch_data:
+    driver: local
+  logstash_data:
+    driver: local
+  kibana_data:
+    driver: local

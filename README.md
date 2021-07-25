@@ -41,6 +41,8 @@ Spring Boot 使用的各种示例，以最简单、最实用为标准
 + [Spring Boot 配置多数据源](./spring-boot-samples-multi-datasource)
 + [使用 Prometheus & Grafana 监控你的 Spring Boot 应用](./spring-boot-samples-monitoring-prometheus-grafana)
 + [在 Spring Boot 项目中使用 Swagger 文档](./spring-boot-samples-swagger)
++ [最佳实践丨快速集成 Alibaba Druid 数据库连接池](./samples-datasource-alibaba-druid)
++ [使用 ELK 集中管理 Spring Boot 应用日志](./samples-distributed-log-elk)
 + 持续更新中，敬请期待 ...
 
 ---
