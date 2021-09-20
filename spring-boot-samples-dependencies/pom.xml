@@ -16,8 +16,11 @@
   <properties>
     <alibaba-druid.version>1.2.6</alibaba-druid.version>
     <apache-commons-validator.version>1.6</apache-commons-validator.version>
+    <apache-lucene.version>8.9.0</apache-lucene.version>
     <facebook-graphql.version>5.10.0</facebook-graphql.version>
     <google-guava.version>30.1.1-jre</google-guava.version>
+    <hanlp.version>portable-1.8.2</hanlp.version>
+    <hanlp-lucene.version>1.1.7</hanlp-lucene.version>
     <logstash-logback-encoder.version>6.6</logstash-logback-encoder.version>
   </properties>
 
@@ -53,6 +56,43 @@
         <groupId>commons-validator</groupId>
         <artifactId>commons-validator</artifactId>
         <version>${apache-commons-validator.version}</version>
+      </dependency>
+
+      <!-- Apache Lucene -->
+      <dependency>
+        <groupId>org.apache.lucene</groupId>
+        <artifactId>lucene-core</artifactId>
+        <version>${apache-lucene.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.lucene</groupId>
+        <artifactId>lucene-queryparser</artifactId>
+        <version>${apache-lucene.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.lucene</groupId>
+        <artifactId>lucene-analyzers-common</artifactId>
+        <version>${apache-lucene.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.lucene</groupId>
+        <artifactId>lucene-highlighter</artifactId>
+        <version>${apache-lucene.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.lucene</groupId>
+        <artifactId>lucene-backward-codecs</artifactId>
+        <version>${apache-lucene.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hankcs</groupId>
+        <artifactId>hanlp</artifactId>
+        <version>${hanlp.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hankcs.nlp</groupId>
+        <artifactId>hanlp-lucene-plugin</artifactId>
+        <version>${hanlp-lucene.version}</version>
       </dependency>
 
       <!-- Guava: Google Core Libraries for Java -->

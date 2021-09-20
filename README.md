@@ -43,6 +43,7 @@ Spring Boot 使用的各种示例，以最简单、最实用为标准
 + [在 Spring Boot 项目中使用 Swagger 文档](./spring-boot-samples-swagger)
 + [最佳实践丨快速集成 Alibaba Druid 数据库连接池](./samples-datasource-alibaba-druid)
 + [使用 ELK 集中管理 Spring Boot 应用日志](./samples-distributed-log-elk)
++ [开源搜索技术的核心引擎 Lucene 入门](./samples-search-lucene)
 + 持续更新中，敬请期待 ...
 
 ---

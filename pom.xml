@@ -71,6 +71,7 @@
     <module>spring-boot-samples-url-shortener</module>
     <module>samples-datasource-alibaba-druid</module>
     <module>samples-distributed-log-elk</module>
+    <module>samples-search-lucene</module>
   </modules>
 
   <dependencies>
