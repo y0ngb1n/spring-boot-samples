@@ -38,7 +38,11 @@ public class UserController {
   }
 
   @ApiOperation(value = "创建用户", notes = "根据 User 对象创建用户")
-  @ApiImplicitParam(name = "user", value = "用户详细实体", required = true, dataTypeClass = UserModel.class)
+  @ApiImplicitParam(
+      name = "user",
+      value = "用户详细实体",
+      required = true,
+      dataTypeClass = UserModel.class)
   @PostMapping(path = "/")
   public UserModel createUser(@RequestBody UserModel user) {
     users.put(user.getId(), user);
@@ -46,7 +50,12 @@ public class UserController {
   }
 
   @ApiOperation(value = "用户详细信息", notes = "根据 ID 获取用户详细信息")
-  @ApiImplicitParam(name = "id", value = "用户 ID", required = true, dataType = "Long", example = "12")
+  @ApiImplicitParam(
+      name = "id",
+      value = "用户 ID",
+      required = true,
+      dataType = "Long",
+      example = "12")
   @GetMapping(path = "/{id}")
   public UserModel getUser(@PathVariable Long id) {
     return users.get(id);
@@ -54,8 +63,17 @@ public class UserController {
 
   @ApiOperation(value = "更新用户详细信息", notes = "根据 ID 指定更新对象, 并根据 User 信息来更新用户详细信息")
   @ApiImplicitParams({
-      @ApiImplicitParam(name = "id", value = "用户 ID", required = true, dataTypeClass = Long.class, example = "12"),
-      @ApiImplicitParam(name = "user", value = "用户详细实体", required = true, dataTypeClass = UserModel.class)
+    @ApiImplicitParam(
+        name = "id",
+        value = "用户 ID",
+        required = true,
+        dataTypeClass = Long.class,
+        example = "12"),
+    @ApiImplicitParam(
+        name = "user",
+        value = "用户详细实体",
+        required = true,
+        dataTypeClass = UserModel.class)
   })
   @PutMapping(path = "/{id}")
   public UserModel updateUser(@PathVariable Long id, @RequestBody UserModel user) {
@@ -68,7 +86,12 @@ public class UserController {
   }
 
   @ApiOperation(value = "删除用户", notes = "根据 ID 指定删除对象")
-  @ApiImplicitParam(name = "id", value = "用户 ID", required = true, dataType = "Long", example = "12")
+  @ApiImplicitParam(
+      name = "id",
+      value = "用户 ID",
+      required = true,
+      dataType = "Long",
+      example = "12")
   @DeleteMapping(path = "/{id}")
   public String deleteUser(@PathVariable Long id) {
     users.remove(id);

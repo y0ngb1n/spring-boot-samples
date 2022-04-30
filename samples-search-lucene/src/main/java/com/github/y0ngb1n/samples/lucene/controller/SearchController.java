@@ -23,9 +23,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author yangbin
- */
+/** @author yangbin */
 @Slf4j
 @RestController
 @RequestMapping(path = "/search")
@@ -64,8 +62,8 @@ public class SearchController {
     List<String> documentList = new ArrayList<>();
     for (ScoreDoc hit : hits) {
       final Document doc = searcher.doc(hit.doc);
-      documentList
-        .add(String.format("score=%f, shardIndex=%d, doc=%s", hit.score, hit.shardIndex, doc));
+      documentList.add(
+          String.format("score=%f, shardIndex=%d, doc=%s", hit.score, hit.shardIndex, doc));
     }
     return documentList;
   }

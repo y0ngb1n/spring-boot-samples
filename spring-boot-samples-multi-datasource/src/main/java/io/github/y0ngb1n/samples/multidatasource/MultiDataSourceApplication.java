@@ -11,11 +11,12 @@ import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration
  *
  * @author yangbin
  */
-@SpringBootApplication(exclude = {
-  DataSourceAutoConfiguration.class,
-  DataSourceTransactionManagerAutoConfiguration.class,
-  JdbcTemplateAutoConfiguration.class
-})
+@SpringBootApplication(
+    exclude = {
+      DataSourceAutoConfiguration.class,
+      DataSourceTransactionManagerAutoConfiguration.class,
+      JdbcTemplateAutoConfiguration.class
+    })
 public class MultiDataSourceApplication {
 
   public static void main(String[] args) {

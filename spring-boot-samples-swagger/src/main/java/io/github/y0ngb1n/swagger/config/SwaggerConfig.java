@@ -23,28 +23,25 @@ public class SwaggerConfig {
   @Bean
   public Docket api() {
     return new Docket(DocumentationType.SWAGGER_2)
-      .apiInfo(apiInfo())
-      .select()
-      //.apis(RequestHandlerSelectors.any())
-      // 指定 Controller 包路径, 不然生成的文档扫描不到接口
-      .apis(RequestHandlerSelectors.basePackage("io.github.y0ngb1n.swagger.controller"))
-      //.paths(PathSelectors.ant("/api/v1/*"))
-      .paths(PathSelectors.any())
-      .build();
+        .apiInfo(apiInfo())
+        .select()
+        // .apis(RequestHandlerSelectors.any())
+        // 指定 Controller 包路径, 不然生成的文档扫描不到接口
+        .apis(RequestHandlerSelectors.basePackage("io.github.y0ngb1n.swagger.controller"))
+        // .paths(PathSelectors.ant("/api/v1/*"))
+        .paths(PathSelectors.any())
+        .build();
   }
 
   private ApiInfo apiInfo() {
     return new ApiInfoBuilder()
-      .title("Spring Boot 项目集成 Swagger 实例文档")
-      .description("求关注ヾ(◍°∇°◍)ﾉﾞ\n"
-        + "\n"
-        + "GitHub: y0ngb1n\n"
-        + "Blog: y0ngb1n.github.io")
-      .termsOfServiceUrl("https://github.com/y0ngb1n")
-      .version("v1.0.0")
-      .license("MIT 协议")
-      .licenseUrl("http://www.opensource.org/licenses/MIT")
-      .contact(new Contact("杨斌", "https://github.com/y0ngb1n", "y0ngb1n@163.com"))
-      .build();
+        .title("Spring Boot 项目集成 Swagger 实例文档")
+        .description("求关注ヾ(◍°∇°◍)ﾉﾞ\n" + "\n" + "GitHub: y0ngb1n\n" + "Blog: y0ngb1n.github.io")
+        .termsOfServiceUrl("https://github.com/y0ngb1n")
+        .version("v1.0.0")
+        .license("MIT 协议")
+        .licenseUrl("http://www.opensource.org/licenses/MIT")
+        .contact(new Contact("杨斌", "https://github.com/y0ngb1n", "y0ngb1n@163.com"))
+        .build();
   }
 }

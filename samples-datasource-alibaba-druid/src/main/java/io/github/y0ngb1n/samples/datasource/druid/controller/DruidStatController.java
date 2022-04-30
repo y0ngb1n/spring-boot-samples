@@ -4,9 +4,7 @@ import com.alibaba.druid.stat.DruidStatManagerFacade;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author yangbin
- */
+/** @author yangbin */
 @RestController
 public class DruidStatController {
 

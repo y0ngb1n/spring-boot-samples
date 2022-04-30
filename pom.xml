@@ -1,54 +1,54 @@
-<?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>2.3.3.RELEASE</version>
-    <relativePath/>
+    <relativePath />
   </parent>
-
   <groupId>io.github.y0ngb1n.samples</groupId>
   <artifactId>spring-boot-samples-parent</artifactId>
-  <name>Spring Boot for Learning</name>
-  <packaging>pom</packaging>
-  <description>
-    <![CDATA[
-        This project is a Spring Boot for learning.
-      ]]>
-  </description>
-  <url>https://github.com/y0ngb1n/spring-boot-samples</url>
   <version>1.0.0-SNAPSHOT</version>
-
-  <properties>
-    <jacoco.version>0.8.4</jacoco.version>
-    <java.version>1.8</java.version>
-  </properties>
-
+  <packaging>pom</packaging>
+  <name>Spring Boot for Learning</name>
+  <description><![CDATA[This project is a Spring Boot for learning.]]></description>
+  <url>https://github.com/y0ngb1n/spring-boot-samples</url>
   <developers>
     <developer>
       <id>y0ngb1n</id>
-      <email>y0ngb1n@163.com</email>
       <name>杨斌</name>
-      <timezone>Asia/Shanghai</timezone>
+      <email>y0ngb1n@163.com</email>
       <roles>
         <role>Project Lead</role>
       </roles>
+      <timezone>Asia/Shanghai</timezone>
     </developer>
   </developers>
-
+  <modules>
+    <module>samples-datasource-alibaba-druid</module>
+    <module>samples-distributed-log-elk</module>
+    <module>samples-search-lucene</module>
+    <module>spring-boot-samples-custom-starter</module>
+    <module>spring-boot-samples-dependencies</module>
+    <module>spring-boot-samples-graphql</module>
+    <module>spring-boot-samples-monitoring-prometheus-grafana</module>
+    <module>spring-boot-samples-multi-datasource</module>
+    <module>spring-boot-samples-swagger</module>
+    <module>spring-boot-samples-url-shortener</module>
+    <module>spring-cloud-samples-openfeign</module>
+  </modules>
   <scm>
     <connection>scm:git:https://github.com/y0ngb1n/spring-boot-samples.git</connection>
-    <developerConnection>
-      scm:git:git@github.com:y0ngb1n/spring-boot-samples.git
-    </developerConnection>
-    <url>https://github.com/y0ngb1n/spring-boot-samples</url>
+    <developerConnection>scm:git:git@github.com:y0ngb1n/spring-boot-samples.git</developerConnection>
     <tag>HEAD</tag>
+    <url>https://github.com/y0ngb1n/spring-boot-samples</url>
   </scm>
-
+  <properties>
+    <jacoco.version>0.8.4</jacoco.version>
+    <java.version>1.8</java.version>
+    <spotless.version>2.22.3</spotless.version>
+  </properties>
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -60,34 +60,18 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <modules>
-    <module>spring-boot-samples-custom-starter</module>
-    <module>spring-boot-samples-dependencies</module>
-    <module>spring-boot-samples-graphql</module>
-    <module>spring-boot-samples-monitoring-prometheus-grafana</module>
-    <module>spring-boot-samples-multi-datasource</module>
-    <module>spring-boot-samples-swagger</module>
-    <module>spring-boot-samples-url-shortener</module>
-    <module>samples-datasource-alibaba-druid</module>
-    <module>samples-distributed-log-elk</module>
-    <module>samples-search-lucene</module>
-  </modules>
-
   <dependencies>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
-
   <build>
     <resources>
       <resource>
@@ -97,15 +81,68 @@
         </excludes>
       </resource>
       <resource>
-        <directory>src/main/resources</directory>
         <filtering>true</filtering>
+        <directory>src/main/resources</directory>
         <includes>
           <include>application.yml</include>
           <include>application-${profile.active}.yml</include>
         </includes>
       </resource>
     </resources>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.diffplug.spotless</groupId>
+          <artifactId>spotless-maven-plugin</artifactId>
+          <version>${spotless.version}</version>
+          <configuration>
+            <java>
+              <indent>
+                <spaces>true</spaces>
+              </indent>
+              <endWithNewline />
+              <trimTrailingWhitespace />
+              <importOrder />
+              <removeUnusedImports />
+              <googleJavaFormat />
+            </java>
+            <pom>
+              <sortPom>
+                <encoding>${project.build.sourceEncoding}</encoding>
+                <lineSeparator>\n</lineSeparator>
+                <expandEmptyElements>false</expandEmptyElements>
+                <spaceBeforeCloseEmptyElement>true</spaceBeforeCloseEmptyElement>
+                <keepBlankLines>false</keepBlankLines>
+                <sortDependencies>scope,groupId,artifactId</sortDependencies>
+                <sortDependencyExclusions>groupId,artifactId</sortDependencyExclusions>
+                <sortPlugins>groupId,artifactId</sortPlugins>
+                <sortProperties>true</sortProperties>
+                <sortModules>true</sortModules>
+                <sortExecutions>true</sortExecutions>
+              </sortPom>
+            </pom>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>apply</goal>
+              </goals>
+              <phase>compile</phase>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>${jacoco.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -116,7 +153,6 @@
       </plugin>
     </plugins>
   </build>
-
   <profiles>
     <!-- 开发环境 -->
     <profile>
@@ -166,10 +202,10 @@
               </execution>
               <execution>
                 <id>report</id>
-                <phase>test</phase>
                 <goals>
                   <goal>report</goal>
                 </goals>
+                <phase>test</phase>
               </execution>
             </executions>
           </plugin>
@@ -177,5 +213,4 @@
       </build>
     </profile>
   </profiles>
-
 </project>

@@ -11,9 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class CustomStarterAutoConfiguration {
 
-  /**
-   * 如果此处不定义 static，Spring 在启动时会报一个 warning，你可尝试一下.
-   */
+  /** 如果此处不定义 static，Spring 在启动时会报一个 warning，你可尝试一下. */
   @Bean
   public static GreetingBeanFactoryPostProcessor greetingBeanFactoryPostProcessor() {
     return new GreetingBeanFactoryPostProcessor();

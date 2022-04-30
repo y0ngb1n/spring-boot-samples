@@ -8,9 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/**
- * @author yangbin
- */
+/** @author yangbin */
 @Table
 @Entity
 @Getter
@@ -19,8 +17,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Book {
 
-  @Id
-  private String isbn;
+  @Id private String isbn;
+
   private String title;
   private String publisher;
   private String[] authors;

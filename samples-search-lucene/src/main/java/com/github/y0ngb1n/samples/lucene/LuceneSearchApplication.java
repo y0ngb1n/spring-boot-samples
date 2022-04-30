@@ -3,9 +3,7 @@ package com.github.y0ngb1n.samples.lucene;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * @author yangbin
- */
+/** @author yangbin */
 @SpringBootApplication
 public class LuceneSearchApplication {
 
@@ -13,4 +11,3 @@ public class LuceneSearchApplication {
     SpringApplication.run(LuceneSearchApplication.class, args);
   }
 }
-

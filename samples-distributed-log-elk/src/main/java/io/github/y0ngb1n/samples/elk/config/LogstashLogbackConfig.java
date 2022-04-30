@@ -32,8 +32,7 @@ public class LogstashLogbackConfig {
   @Value("${spring.application.name}")
   private String appName;
 
-  @Autowired
-  private LogstashProperties logstash;
+  @Autowired private LogstashProperties logstash;
 
   @Bean
   @ConfigurationProperties(prefix = "elk.logstash")
@@ -50,13 +49,12 @@ public class LogstashLogbackConfig {
     logstashAppender.setName(LOGSTASH_APPENDER_NAME);
     logstashAppender.setContext(loggerContext);
     logstashAppender.addDestinations(
-      new InetSocketAddress(this.logstash.getHost(), this.logstash.getPort())
-    );
+        new InetSocketAddress(this.logstash.getHost(), this.logstash.getPort()));
 
     // https://github.com/logstash/logstash-logback-encoder
     final LogstashEncoder logstashEncoder = new LogstashEncoder();
     logstashEncoder.setIncludeContext(false);
-    String customFields = "{\"app_name\":\"" + this.appName +"\",\"idol\":\"yangbin\"}";
+    String customFields = "{\"app_name\":\"" + this.appName + "\",\"idol\":\"yangbin\"}";
     logstashEncoder.setCustomFields(customFields);
 
     final ShortenedThrowableConverter throwableConverter = new ShortenedThrowableConverter();

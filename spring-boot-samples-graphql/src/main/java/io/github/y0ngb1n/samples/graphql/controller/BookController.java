@@ -19,8 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/v1/books")
 public class BookController {
 
-  @Autowired
-  private GraphQLService graphQLService;
+  @Autowired private GraphQLService graphQLService;
 
   @PostMapping
   public ResponseEntity<Object> getAllBooks(@RequestBody String query) {

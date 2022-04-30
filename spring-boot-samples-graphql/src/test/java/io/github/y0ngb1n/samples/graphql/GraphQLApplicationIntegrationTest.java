@@ -28,51 +28,51 @@ import org.springframework.test.web.servlet.MockMvc;
 @TestPropertySource(locations = "classpath:application-integration-test.properties")
 public class GraphQLApplicationIntegrationTest {
 
-  @Autowired
-  private MockMvc mvc;
+  @Autowired private MockMvc mvc;
 
   @Test
   public void givenAllBooks_whenGetAllBooks_thenStatus200() throws Exception {
-    mvc.perform(post("/v1/books")
-      .contentType(MediaType.TEXT_PLAIN)
-      .content("{allBooks {isbn title}}"))
-      .andExpect(status().isOk())
-      .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+    mvc.perform(
+            post("/v1/books").contentType(MediaType.TEXT_PLAIN).content("{allBooks {isbn title}}"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
   }
 
   @Test
   public void givenAllBooks_whenGetAllBooks_thenReturnBookTitle() throws Exception {
-    mvc.perform(post("/v1/books")
-      .contentType(MediaType.TEXT_PLAIN)
-      .content("{allBooks {title}}"))
-      .andExpect(status().isOk())
-      .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-      .andExpect(jsonPath("$.data.allBooks", hasSize(5)))
-      .andExpect(jsonPath("$.data.allBooks[0].isbn").doesNotExist())
-      .andExpect(jsonPath("$.data.allBooks[0].title").isNotEmpty());
+    mvc.perform(post("/v1/books").contentType(MediaType.TEXT_PLAIN).content("{allBooks {title}}"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+        .andExpect(jsonPath("$.data.allBooks", hasSize(5)))
+        .andExpect(jsonPath("$.data.allBooks[0].isbn").doesNotExist())
+        .andExpect(jsonPath("$.data.allBooks[0].title").isNotEmpty());
   }
 
   @Test
   public void givenBook_whenGetBookFindById_thenReturnBook() throws Exception {
-    mvc.perform(post("/v1/books")
-      .contentType(MediaType.TEXT_PLAIN)
-      .content("{book(id: \"9787121362132\") {isbn title authors}}"))
-      .andExpect(status().isOk())
-      .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-      .andExpect(jsonPath("$.data.book").exists())
-      .andExpect(jsonPath("$.data.book.isbn").value("9787121362132"))
-      .andExpect(jsonPath("$.data.book.title").value("高可用可伸缩微服务架构：基于 Dubbo、Spring Cloud 和 Service Mesh"))
-      .andExpect(jsonPath("$.data.book.authors").isArray());
+    mvc.perform(
+            post("/v1/books")
+                .contentType(MediaType.TEXT_PLAIN)
+                .content("{book(id: \"9787121362132\") {isbn title authors}}"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+        .andExpect(jsonPath("$.data.book").exists())
+        .andExpect(jsonPath("$.data.book.isbn").value("9787121362132"))
+        .andExpect(
+            jsonPath("$.data.book.title").value("高可用可伸缩微服务架构：基于 Dubbo、Spring Cloud 和 Service Mesh"))
+        .andExpect(jsonPath("$.data.book.authors").isArray());
   }
 
   @Test
   public void givenAllBooksAndBook_whenAllBooks_thenReturnAllBooksAndBook() throws Exception {
-    mvc.perform(post("/v1/books")
-      .contentType(MediaType.TEXT_PLAIN)
-      .content("{allBooks {isbn title} book(id: \"9787121362132\") {isbn title authors}}"))
-      .andExpect(status().isOk())
-      .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-      .andExpect(jsonPath("$.data.allBooks").isArray())
-      .andExpect(jsonPath("$.data.book").exists());
+    mvc.perform(
+            post("/v1/books")
+                .contentType(MediaType.TEXT_PLAIN)
+                .content(
+                    "{allBooks {isbn title} book(id: \"9787121362132\") {isbn title authors}}"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+        .andExpect(jsonPath("$.data.allBooks").isArray())
+        .andExpect(jsonPath("$.data.book").exists());
   }
 }

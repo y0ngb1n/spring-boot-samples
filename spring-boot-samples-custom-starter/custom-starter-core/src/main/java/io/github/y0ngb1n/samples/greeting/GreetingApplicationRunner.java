@@ -4,9 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 
-/**
- * @author yangbin
- */
+/** @author yangbin */
 @Slf4j
 public class GreetingApplicationRunner implements ApplicationRunner {
 

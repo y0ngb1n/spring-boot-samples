@@ -31,8 +31,8 @@ public class SoulSoupDataFetcher implements AutoCloseable {
 
   private final IndexWriter indexWriter;
   private final ObjectMapper objectMapper;
-  private final ScheduledExecutorService scheduledExecutorService = Executors
-    .newSingleThreadScheduledExecutor();
+  private final ScheduledExecutorService scheduledExecutorService =
+      Executors.newSingleThreadScheduledExecutor();
 
   public SoulSoupDataFetcher(ObjectMapper objectMapper, IndexWriter indexWriter) {
     this.objectMapper = objectMapper;
@@ -45,18 +45,15 @@ public class SoulSoupDataFetcher implements AutoCloseable {
     final SoulSoup soulSoup = new SoulSoup();
     soulSoup.setId(666L);
     soulSoup.setTitle(
-      "面向生产环境的多语种自然语言处理工具包，基于PyTorch和TensorFlow 2.x双引擎，目标是普及落地最前沿的NLP技术。HanLP具备功能完善、性能高效、架构清晰、语料时新、可自定义的特点。");
+        "面向生产环境的多语种自然语言处理工具包，基于PyTorch和TensorFlow 2.x双引擎，目标是普及落地最前沿的NLP技术。HanLP具备功能完善、性能高效、架构清晰、语料时新、可自定义的特点。");
     updateIndex(soulSoup);
     log.info("Lucene index initialized.");
   }
 
   private void fetchSoulSoup() {
-    OkHttpClient client = new OkHttpClient().newBuilder()
-      .build();
-    Request request = new Request.Builder()
-      .url("https://soul-soup.fe.workers.dev/")
-      .method("GET", null)
-      .build();
+    OkHttpClient client = new OkHttpClient().newBuilder().build();
+    Request request =
+        new Request.Builder().url("https://soul-soup.fe.workers.dev/").method("GET", null).build();
     try (Response response = client.newCall(request).execute()) {
       assert response.body() != null;
       final String data = response.body().string();

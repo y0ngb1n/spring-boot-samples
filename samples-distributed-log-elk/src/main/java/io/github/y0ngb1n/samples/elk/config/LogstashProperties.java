@@ -2,9 +2,7 @@ package io.github.y0ngb1n.samples.elk.config;
 
 import lombok.Data;
 
-/**
- * @author yangbin
- */
+/** @author yangbin */
 @Data
 public class LogstashProperties {
 

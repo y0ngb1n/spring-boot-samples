@@ -16,8 +16,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AllBooksDataFetcher implements DataFetcher<List<Book>> {
 
-  @Autowired
-  private BookRepository bookRepository;
+  @Autowired private BookRepository bookRepository;
 
   @Override
   public List<Book> get(DataFetchingEnvironment dataFetchingEnvironment) {

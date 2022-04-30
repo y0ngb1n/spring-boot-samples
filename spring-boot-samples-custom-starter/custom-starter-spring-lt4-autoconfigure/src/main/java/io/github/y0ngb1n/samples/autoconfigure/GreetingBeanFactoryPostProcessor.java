@@ -8,9 +8,7 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.util.ClassUtils;
 
-/**
- * @author yangbin
- */
+/** @author yangbin */
 @Slf4j
 public class GreetingBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
@@ -20,9 +18,10 @@ public class GreetingBeanFactoryPostProcessor implements BeanFactoryPostProcesso
   public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) {
 
     // 判断当前 Class Path 下是否存在所需要的 GreetingApplicationRunner 这么一个类
-    boolean hasClass = ClassUtils
-      .isPresent("io.github.y0ngb1n.samples.greeting.GreetingApplicationRunner",
-        GreetingBeanFactoryPostProcessor.class.getClassLoader());
+    boolean hasClass =
+        ClassUtils.isPresent(
+            "io.github.y0ngb1n.samples.greeting.GreetingApplicationRunner",
+            GreetingBeanFactoryPostProcessor.class.getClassLoader());
 
     if (!hasClass) {
       // 类不存在
@@ -48,7 +47,7 @@ public class GreetingBeanFactoryPostProcessor implements BeanFactoryPostProcesso
       beanDefinition.setBeanClass(GreetingApplicationRunner.class);
 
       ((BeanDefinitionRegistry) beanFactory)
-        .registerBeanDefinition(GREETING_BEAN_NAME, beanDefinition);
+          .registerBeanDefinition(GREETING_BEAN_NAME, beanDefinition);
     } else {
 
       beanFactory.registerSingleton(GREETING_BEAN_NAME, new GreetingApplicationRunner());

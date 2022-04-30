@@ -24,8 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/v1")
 public class UrlShortenerController {
 
-  @Autowired
-  StringRedisTemplate redisTemplate;
+  @Autowired StringRedisTemplate redisTemplate;
 
   @GetMapping(path = "/{id}")
   public String getUrl(@PathVariable String id) {
@@ -36,9 +35,7 @@ public class UrlShortenerController {
 
   @PostMapping
   public String create(@RequestBody String url) {
-    UrlValidator urlValidator = new UrlValidator(
-      new String[]{"http", "https"}
-    );
+    UrlValidator urlValidator = new UrlValidator(new String[] {"http", "https"});
     if (urlValidator.isValid(url)) {
       String id = Hashing.murmur3_32().hashString(url, StandardCharsets.UTF_8).toString();
       log.debug("URL Id generated: {}", id);

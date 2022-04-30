@@ -10,18 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-/**
- * @author yangbin
- */
+/** @author yangbin */
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class MultiDataSourceApplicationTests {
 
-  @Autowired
-  private DataSource fooDataSource;
-  @Autowired
-  private DataSource barDataSource;
+  @Autowired private DataSource fooDataSource;
+
+  @Autowired private DataSource barDataSource;
 
   @Test
   public void testFooDataSource() throws SQLException {

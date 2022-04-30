@@ -19,9 +19,7 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-/**
- * @author yangbin
- */
+/** @author yangbin */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.MOCK, classes = UrlShortenerApplication.class)
 @AutoConfigureMockMvc
@@ -31,45 +29,40 @@ public class UrlShortenerApplicationIntegrationTest {
 
   @Value("${integration-test.valid-url}")
   private String testValidUrl;
+
   @Value("${integration-test.valid-url-id}")
   private String testValidUrlId;
+
   @Value("${integration-test.invalid-url}")
   private String testInvalidUrl;
 
-  @Autowired
-  private MockMvc mvc;
+  @Autowired private MockMvc mvc;
 
   @Test
   public void a_givenUrlId_whenCreateUrlId_thenStatus200() throws Exception {
-    mvc.perform(post("/v1")
-      .contentType(MediaType.TEXT_PLAIN)
-      .content(testValidUrl))
-      .andExpect(status().isOk())
-      .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN));
+    mvc.perform(post("/v1").contentType(MediaType.TEXT_PLAIN).content(testValidUrl))
+        .andExpect(status().isOk())
+        .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN));
   }
 
   @Test
   public void b_givenUrlId_whenCreateUrlId_thenCreateSuccessful() throws Exception {
-    mvc.perform(post("/v1")
-      .contentType(MediaType.TEXT_PLAIN)
-      .content(testValidUrl))
-      .andExpect(status().isOk())
-      .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN))
-      .andExpect(content().string(testValidUrlId));
+    mvc.perform(post("/v1").contentType(MediaType.TEXT_PLAIN).content(testValidUrl))
+        .andExpect(status().isOk())
+        .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN))
+        .andExpect(content().string(testValidUrlId));
   }
 
   @Test(expected = Exception.class)
   public void b_givenUrlId_whenCreateUrlId_thenCreateFailure() throws Exception {
-    mvc.perform(post("/v1")
-      .contentType(MediaType.TEXT_PLAIN)
-      .content(testInvalidUrl));
+    mvc.perform(post("/v1").contentType(MediaType.TEXT_PLAIN).content(testInvalidUrl));
   }
 
   @Test
   public void c_givenUrl_whenGetUrl_thenRetrievedSuccessful() throws Exception {
     mvc.perform(get("/v1/{id}", testValidUrlId))
-      .andExpect(status().isOk())
-      .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN))
-      .andExpect(content().string(testValidUrl));
+        .andExpect(status().isOk())
+        .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN))
+        .andExpect(content().string(testValidUrl));
   }
 }

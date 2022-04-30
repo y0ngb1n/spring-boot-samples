@@ -19,9 +19,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 @Configuration
 public class MultiDataSourceConfig {
 
-  //---------------------------------------------------------------------
+  // ---------------------------------------------------------------------
   // Config Foo DataSource
-  //---------------------------------------------------------------------
+  // ---------------------------------------------------------------------
 
   @Bean
   @ConfigurationProperties("foo.datasource")
@@ -42,9 +42,9 @@ public class MultiDataSourceConfig {
     return new DataSourceTransactionManager(fooDataSource);
   }
 
-  //---------------------------------------------------------------------
+  // ---------------------------------------------------------------------
   // Config Bar DataSource
-  //---------------------------------------------------------------------
+  // ---------------------------------------------------------------------
 
   @Bean
   @ConfigurationProperties("bar.datasource")

@@ -10,6 +10,4 @@ import org.springframework.stereotype.Repository;
  * @author yangbin
  */
 @Repository
-public interface BookRepository extends JpaRepository<Book, String> {
-
-}
+public interface BookRepository extends JpaRepository<Book, String> {}
