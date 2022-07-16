@@ -1,4 +1,4 @@
-package io.github.y0ngb1n.samples.starter.elasticsearch.core;
+package io.github.y0ngb1n.samples.elasticsearch.core;
 
 import java.util.List;
 import lombok.AllArgsConstructor;

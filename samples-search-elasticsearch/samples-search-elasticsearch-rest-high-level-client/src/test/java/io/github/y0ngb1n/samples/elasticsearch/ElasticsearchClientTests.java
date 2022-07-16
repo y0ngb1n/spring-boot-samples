@@ -1,8 +1,8 @@
-package io.github.y0ngb1n.samples.starter.elasticsearch;
+package io.github.y0ngb1n.samples.elasticsearch;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.y0ngb1n.samples.starter.elasticsearch.fetcher.SoulSoupDataFetcher;
-import io.github.y0ngb1n.samples.starter.elasticsearch.fetcher.SoulSoupDataFetcher.SoulSoup;
+import io.github.y0ngb1n.samples.elasticsearch.fetcher.SoulSoupDataFetcher;
+import io.github.y0ngb1n.samples.elasticsearch.fetcher.SoulSoupDataFetcher.SoulSoup;
 import java.io.IOException;
 import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;

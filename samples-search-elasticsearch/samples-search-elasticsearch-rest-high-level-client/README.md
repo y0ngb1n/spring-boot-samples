@@ -79,6 +79,34 @@ GET /soul_soup/_search
 GET /soul_soup/_doc/666
 ```
 
+## TODO
+
+- 索引操作
+  - [x] 创建
+  - [x] 查询
+  - [x] 删除
+- 文档操作
+  - [x] 创建
+  - [x] 查询
+  - [x] 更新
+  - [x] 删除
+  - [ ] 批量创建
+  - [ ] 批量删除
+- 文档的高级查询
+  - [ ] 全量查询
+  - [ ] 字段查询
+  - [ ] 条件查询
+  - [ ] 分页查询
+  - [ ] 查询排序
+  - [ ] 组合查询
+  - [ ] 范围查询
+  - [ ] 模糊查询
+  - [ ] 高亮查询
+  - [ ] 最大值查询
+  - [ ] 分组查询
+  
+参考单元测试 [ElasticsearchClientTests](./src/test/java/io/github/y0ngb1n/samples/elasticsearch/ElasticsearchClientTests.java)
+
 ## 替代方案
 
 ### Spring Data Elasticsearch

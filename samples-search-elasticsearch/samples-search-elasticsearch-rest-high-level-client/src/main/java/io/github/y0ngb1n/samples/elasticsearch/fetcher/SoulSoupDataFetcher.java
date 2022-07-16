@@ -1,4 +1,4 @@
-package io.github.y0ngb1n.samples.starter.elasticsearch.fetcher;
+package io.github.y0ngb1n.samples.elasticsearch.fetcher;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;

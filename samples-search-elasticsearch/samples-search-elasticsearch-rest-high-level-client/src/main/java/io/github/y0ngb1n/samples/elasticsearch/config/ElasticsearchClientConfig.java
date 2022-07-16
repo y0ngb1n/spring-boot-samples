@@ -1,6 +1,6 @@
-package io.github.y0ngb1n.samples.starter.elasticsearch.config;
+package io.github.y0ngb1n.samples.elasticsearch.config;
 
-import io.github.y0ngb1n.samples.starter.elasticsearch.core.ElasticsearchClientProperties;
+import io.github.y0ngb1n.samples.elasticsearch.core.ElasticsearchClientProperties;
 import lombok.RequiredArgsConstructor;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;

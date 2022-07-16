@@ -1,4 +1,4 @@
-package io.github.y0ngb1n.samples.starter.elasticsearch;
+package io.github.y0ngb1n.samples.elasticsearch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
