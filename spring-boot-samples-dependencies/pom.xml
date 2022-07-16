@@ -1,88 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.3.3.RELEASE</version>
+    <relativePath />
+  </parent>
   <groupId>io.github.y0ngb1n.samples</groupId>
   <artifactId>spring-boot-samples-dependencies</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <url>https://github.com/y0ngb1n/spring-boot-samples</url>
-
   <name>spring-boot-samples-dependencies</name>
   <description>Spring Boot Samples Dependencies</description>
-
+  <url>https://github.com/y0ngb1n/spring-boot-samples</url>
+  <developers>
+    <developer>
+      <id>y0ngb1n</id>
+      <name>杨斌</name>
+      <email>y0ngb1n@163.com</email>
+      <timezone>Asia/Shanghai</timezone>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:https://github.com/y0ngb1n/spring-boot-samples.git</connection>
+    <developerConnection>scm:git:git@github.com:y0ngb1n/spring-boot-samples.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>https://github.com/y0ngb1n/spring-boot-samples</url>
+  </scm>
   <properties>
     <alibaba-druid.version>1.2.6</alibaba-druid.version>
     <apache-commons-validator.version>1.6</apache-commons-validator.version>
     <apache-lucene.version>8.9.0</apache-lucene.version>
     <facebook-graphql.version>5.10.0</facebook-graphql.version>
     <google-guava.version>30.1.1-jre</google-guava.version>
-    <hanlp.version>portable-1.8.2</hanlp.version>
     <hanlp-lucene.version>1.1.7</hanlp-lucene.version>
+    <hanlp.version>portable-1.8.2</hanlp.version>
+    <jacoco.version>0.8.4</jacoco.version>
+    <java.version>1.8</java.version>
     <logstash-logback-encoder.version>6.6</logstash-logback-encoder.version>
+    <spotless.version>2.23.0</spotless.version>
   </properties>
-
-  <developers>
-    <developer>
-      <id>y0ngb1n</id>
-      <email>y0ngb1n@163.com</email>
-      <name>杨斌</name>
-      <timezone>Asia/Shanghai</timezone>
-    </developer>
-  </developers>
-
-  <scm>
-    <connection>scm:git:https://github.com/y0ngb1n/spring-boot-samples.git</connection>
-    <developerConnection>
-      scm:git:git@github.com:y0ngb1n/spring-boot-samples.git
-    </developerConnection>
-    <url>https://github.com/y0ngb1n/spring-boot-samples</url>
-    <tag>HEAD</tag>
-  </scm>
-
   <dependencyManagement>
     <dependencies>
-      <!-- Alibaba Druid: 为监控而生的数据库连接池 -->
       <dependency>
         <groupId>com.alibaba</groupId>
         <artifactId>druid-spring-boot-starter</artifactId>
         <version>${alibaba-druid.version}</version>
       </dependency>
-
-      <!-- Apache Commons Validator provides the building blocks for both client side validation and server side data validation. -->
       <dependency>
-        <groupId>commons-validator</groupId>
-        <artifactId>commons-validator</artifactId>
-        <version>${apache-commons-validator.version}</version>
-      </dependency>
-
-      <!-- Apache Lucene -->
-      <dependency>
-        <groupId>org.apache.lucene</groupId>
-        <artifactId>lucene-core</artifactId>
-        <version>${apache-lucene.version}</version>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${google-guava.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.apache.lucene</groupId>
-        <artifactId>lucene-queryparser</artifactId>
-        <version>${apache-lucene.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.lucene</groupId>
-        <artifactId>lucene-analyzers-common</artifactId>
-        <version>${apache-lucene.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.lucene</groupId>
-        <artifactId>lucene-highlighter</artifactId>
-        <version>${apache-lucene.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.lucene</groupId>
-        <artifactId>lucene-backward-codecs</artifactId>
-        <version>${apache-lucene.version}</version>
+        <groupId>com.graphql-java-kickstart</groupId>
+        <artifactId>graphql-spring-boot-starter</artifactId>
+        <version>${facebook-graphql.version}</version>
       </dependency>
       <dependency>
         <groupId>com.hankcs</groupId>
@@ -94,28 +68,106 @@
         <artifactId>hanlp-lucene-plugin</artifactId>
         <version>${hanlp-lucene.version}</version>
       </dependency>
-
-      <!-- Guava: Google Core Libraries for Java -->
       <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>${google-guava.version}</version>
+        <groupId>commons-validator</groupId>
+        <artifactId>commons-validator</artifactId>
+        <version>${apache-commons-validator.version}</version>
       </dependency>
-
-      <!-- GraphQL: A query language for your API -->
-      <dependency>
-        <groupId>com.graphql-java-kickstart</groupId>
-        <artifactId>graphql-spring-boot-starter</artifactId>
-        <version>${facebook-graphql.version}</version>
-      </dependency>
-
-      <!-- Logstash: Logback JSON encoder and appenders -->
       <dependency>
         <groupId>net.logstash.logback</groupId>
         <artifactId>logstash-logback-encoder</artifactId>
         <version>${logstash-logback-encoder.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.apache.lucene</groupId>
+        <artifactId>lucene-analyzers-common</artifactId>
+        <version>${apache-lucene.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.lucene</groupId>
+        <artifactId>lucene-backward-codecs</artifactId>
+        <version>${apache-lucene.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.lucene</groupId>
+        <artifactId>lucene-core</artifactId>
+        <version>${apache-lucene.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.lucene</groupId>
+        <artifactId>lucene-highlighter</artifactId>
+        <version>${apache-lucene.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.lucene</groupId>
+        <artifactId>lucene-queryparser</artifactId>
+        <version>${apache-lucene.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
-
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.diffplug.spotless</groupId>
+          <artifactId>spotless-maven-plugin</artifactId>
+          <version>${spotless.version}</version>
+          <configuration>
+            <java>
+              <indent>
+                <spaces>true</spaces>
+              </indent>
+              <endWithNewline />
+              <trimTrailingWhitespace />
+              <importOrder />
+              <removeUnusedImports />
+              <googleJavaFormat />
+            </java>
+            <pom>
+              <sortPom>
+                <encoding>${project.build.sourceEncoding}</encoding>
+                <lineSeparator>\n</lineSeparator>
+                <expandEmptyElements>false</expandEmptyElements>
+                <spaceBeforeCloseEmptyElement>true</spaceBeforeCloseEmptyElement>
+                <keepBlankLines>false</keepBlankLines>
+                <sortDependencies>scope,groupId,artifactId</sortDependencies>
+                <sortDependencyExclusions>groupId,artifactId</sortDependencyExclusions>
+                <sortPlugins>groupId,artifactId</sortPlugins>
+                <sortProperties>true</sortProperties>
+                <sortModules>true</sortModules>
+                <sortExecutions>true</sortExecutions>
+              </sortPom>
+            </pom>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>apply</goal>
+              </goals>
+              <phase>compile</phase>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>${jacoco.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

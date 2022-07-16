@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.3.3.RELEASE</version>
-    <relativePath />
+    <groupId>io.github.y0ngb1n.samples</groupId>
+    <artifactId>spring-boot-samples-dependencies</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>./spring-boot-samples-dependencies</relativePath>
   </parent>
   <groupId>io.github.y0ngb1n.samples</groupId>
   <artifactId>spring-boot-samples-parent</artifactId>
@@ -28,6 +28,7 @@
   <modules>
     <module>samples-datasource-alibaba-druid</module>
     <module>samples-distributed-log-elk</module>
+    <module>samples-search-elasticsearch</module>
     <module>samples-search-lucene</module>
     <module>spring-boot-samples-custom-starter</module>
     <module>spring-boot-samples-dependencies</module>
@@ -44,22 +45,6 @@
     <tag>HEAD</tag>
     <url>https://github.com/y0ngb1n/spring-boot-samples</url>
   </scm>
-  <properties>
-    <jacoco.version>0.8.4</jacoco.version>
-    <java.version>1.8</java.version>
-    <spotless.version>2.22.3</spotless.version>
-  </properties>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>io.github.y0ngb1n.samples</groupId>
-        <artifactId>spring-boot-samples-dependencies</artifactId>
-        <version>${project.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -89,69 +74,6 @@
         </includes>
       </resource>
     </resources>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>com.diffplug.spotless</groupId>
-          <artifactId>spotless-maven-plugin</artifactId>
-          <version>${spotless.version}</version>
-          <configuration>
-            <java>
-              <indent>
-                <spaces>true</spaces>
-              </indent>
-              <endWithNewline />
-              <trimTrailingWhitespace />
-              <importOrder />
-              <removeUnusedImports />
-              <googleJavaFormat />
-            </java>
-            <pom>
-              <sortPom>
-                <encoding>${project.build.sourceEncoding}</encoding>
-                <lineSeparator>\n</lineSeparator>
-                <expandEmptyElements>false</expandEmptyElements>
-                <spaceBeforeCloseEmptyElement>true</spaceBeforeCloseEmptyElement>
-                <keepBlankLines>false</keepBlankLines>
-                <sortDependencies>scope,groupId,artifactId</sortDependencies>
-                <sortDependencyExclusions>groupId,artifactId</sortDependencyExclusions>
-                <sortPlugins>groupId,artifactId</sortPlugins>
-                <sortProperties>true</sortProperties>
-                <sortModules>true</sortModules>
-                <sortExecutions>true</sortExecutions>
-              </sortPom>
-            </pom>
-          </configuration>
-          <executions>
-            <execution>
-              <goals>
-                <goal>apply</goal>
-              </goals>
-              <phase>compile</phase>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.jacoco</groupId>
-          <artifactId>jacoco-maven-plugin</artifactId>
-          <version>${jacoco.version}</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-    <plugins>
-      <plugin>
-        <groupId>com.diffplug.spotless</groupId>
-        <artifactId>spotless-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-        </configuration>
-      </plugin>
-    </plugins>
   </build>
   <profiles>
     <!-- 开发环境 -->

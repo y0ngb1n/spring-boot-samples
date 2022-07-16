@@ -1,0 +1,4 @@
+elasticsearch:
+  hosts:
+    - http://127.0.0.1:9200
+    - http://10.0.0.10:9200
