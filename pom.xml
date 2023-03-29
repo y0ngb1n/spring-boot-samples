@@ -37,7 +37,6 @@
     <module>spring-boot-samples-multi-datasource</module>
     <module>spring-boot-samples-swagger</module>
     <module>spring-boot-samples-url-shortener</module>
-    <module>spring-cloud-samples-openfeign</module>
   </modules>
   <scm>
     <connection>scm:git:https://github.com/y0ngb1n/spring-boot-samples.git</connection>
