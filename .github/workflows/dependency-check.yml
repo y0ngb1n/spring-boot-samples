@@ -19,6 +19,8 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+      - name: Priming build with Maven
+        run: mvn install -DskipTests
       - name: Dependency Check
         run: mvn org.owasp:dependency-check-maven:aggregate
       - name: Cleanup snapshots cache
