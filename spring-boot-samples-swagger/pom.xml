@@ -10,7 +10,7 @@
   <artifactId>spring-boot-samples-swagger</artifactId>
   <description>Setting Up Swagger 2 with a Spring REST API.</description>
   <properties>
-    <swagger2.version>2.9.2</swagger2.version>
+    <swagger2.version>2.10.0</swagger2.version>
   </properties>
   <dependencies>
     <dependency>
